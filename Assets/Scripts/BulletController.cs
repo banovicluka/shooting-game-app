@@ -14,7 +14,9 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         // Check if the bullet hit an enemy or ally, and update the score accordingly.
-        var whois = collision.gameObject.tag;
+        // var whois = collision.gameObject.tag;
+        GameObject parentObject = collision.transform.root.gameObject;
+        var whois = parentObject.tag;
         var hit = "";
         if(whois == "Enemy") { // If the bullet hits an enemy, add 1 to the score.
             Scoring(1);
@@ -34,7 +36,8 @@ public class BulletController : MonoBehaviour
             logger.MarkAsKilled();
         }
         // Destroy the bullet and the object it hit.   
-        Destroy(collision.gameObject);
+        // Destroy(collision.gameObject);
+        Destroy(parentObject);
         Destroy(gameObject);
     }
 

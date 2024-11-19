@@ -45,11 +45,12 @@ public class NPCController : MonoBehaviour
         
         KillTracker killTracker = GameObject.FindObjectOfType<KillTracker>();
         if (isEnemy) {
-            NPC = Instantiate(PrefabEnemy, newLocation, Quaternion.identity);
+            // NPC = Instantiate(PrefabEnemy, newLocation, Quaternion.identity);
+            NPC = Instantiate(PrefabEnemy, newLocation, Quaternion.Euler(0, 180, 0));
             killTracker.LogAppearance("Enemy");
         }
         else {
-            NPC = Instantiate(PrefabAlly, newLocation, Quaternion.identity);
+            NPC = Instantiate(PrefabAlly, newLocation, Quaternion.Euler(0, 180, 0));
             killTracker.LogAppearance("Ally");
         }
         Destroy(NPC, 3f);
