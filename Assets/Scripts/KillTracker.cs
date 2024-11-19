@@ -56,7 +56,7 @@ public class KillTracker : MonoBehaviour
         if (gameEnded) return;
 
         float gameTime = GetGameTime();
-        string logEntry = $"{victim} dissapear at {gameTime} s";
+        string logEntry = $"{victim} disappear at {gameTime} s";
         logs.Add(logEntry);
     }
 
