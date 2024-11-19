@@ -8,7 +8,6 @@ public class KillTracker : MonoBehaviour
 {
     public Text resultText; 
     public GameObject gameOverScreen; 
-    public Button restartButton;
 
     private List<string> killLogs = new List<string>(); 
     private List<string> logs = new List<string>();
@@ -18,7 +17,6 @@ public class KillTracker : MonoBehaviour
     {
         gameEnded = false;
         if (gameOverScreen != null) gameOverScreen.SetActive(false); 
-        restartButton.onClick.AddListener(RestartGame);
     }
 
     void Update()

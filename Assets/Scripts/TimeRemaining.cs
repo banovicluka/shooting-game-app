@@ -7,7 +7,7 @@ public class TimeRemaining : MonoBehaviour
 {
 
     public Text timeRemainingText;
-    public float timeLimit = 10f;
+    public float timeLimit = 60f;
     public float timeRemaining;
     public bool gameEnded = false;
 
